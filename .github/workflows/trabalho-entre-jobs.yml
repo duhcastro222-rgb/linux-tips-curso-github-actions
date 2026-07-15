@@ -1,0 +1,39 @@
+name: Lendo arquivos compartilhados entre steps
+# ^ 0 espaços — coluna zero, nível mais alto
+
+on:
+# ^ 0 espaços
+  push:
+# ^ 2 espaços (entrou um nível dentro de "on")
+    branches:
+#   ^ 4 espaços (entrou um nível dentro de "push")
+      - main
+#     ^ 6 espaços (item de lista dentro de "branches") — sem os : no final
+
+jobs:
+# ^ 0 espaços
+  entre-steps:
+# ^ 2 espaços — nome do job, direto dentro de "jobs"
+    runs-on: ubuntu-latest
+#   ^ 4 espaços (dentro do job)
+    steps:
+#   ^ 4 espaços (irmão do runs-on, mesma coluna)
+      - name: Confere versao Ubuntu
+#     ^ 6 espaços — hífen do item de lista (step)
+        run: cat /etc/os-release
+#       ^ 8 espaços — "run" alinha com o "name" acima (2 depois do hífen)
+
+      - name: Exibir uma mensagem
+#     ^ 6 espaços — mesmo nível do step anterior
+        run: echo "Estou fazendo o curso do LinuxTips" > mensagem.txt
+#       ^ 8 espaços
+
+      - name: Qualquer coisa
+#     ^ 6 espaços
+        run: ls -lha
+#       ^ 8 espaços
+
+      - name: Le o conteudo do arquivo
+#     ^ 6 espaços
+        run: cat mensagem.txt
+#       ^ 8 espaços
