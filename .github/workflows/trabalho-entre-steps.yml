@@ -1,11 +1,11 @@
-name: Primeiro workflow
+name: Lendo arquivos compartilhados entre steps
 
 on:
    workflow_dispatch
 
 
 jobs:
-    giropops:
+    entre-steps:
         runs-on: ubuntu-latest
         steps:
             - name: Confere versao Ubuntu
