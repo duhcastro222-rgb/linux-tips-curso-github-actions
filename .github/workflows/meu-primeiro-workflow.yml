@@ -13,6 +13,5 @@ jobs:
             - name: Confere versao Ubuntu
               run : cat /etc/os-release
 
-            -name : Exibir uma mensagem
-             run : echo "Estou fazendo o curso do LinuxTips"
-             
+            - name : Exibir uma mensagem
+              run : echo "Estou fazendo o curso do LinuxTips"
